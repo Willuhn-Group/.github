@@ -26,6 +26,11 @@ General repos are named after what they do; project repos after the study.
 
 - **General repos never depend on project repos.**
 - General repos may depend on other general repos (e.g. `medpc-behavior` → `matlab-utilities`).
+- **Every general repo runs on its own** once the general repos it depends on
+  are on the path: its example scripts run from a fresh clone with no edits.
+  List those dependencies in the README *Requirements* table and in the
+  `CLAUDE.md` *Dependencies* table. If the dependency has no release tag yet,
+  write `main (untagged)` as the version.
 - **Project repos pin exact versions** of the general repos they use. The README
   has a *Requirements* table:
 
