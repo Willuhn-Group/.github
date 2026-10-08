@@ -34,12 +34,13 @@ Reusable code that anyone can use for their own data.
 | *more coming soon* | | |
 
 ### Project repositories
-The analysis code behind specific studies, archived with a DOI at publication.
+The analysis code behind specific studies. Project repositories are private
+while the work is ongoing and are made public, with a DOI, when the study is
+published.
 
 | Repository | Study |
 |---|---|
-| [calcium_rats_gonogo](https://github.com/Willuhn-Group/calcium_rats_gonogo) | Prelimbic and infralimbic calcium activity during a go/no-go task in rats |
-| [ephys-induced-polydipsia](https://github.com/Willuhn-Group/ephys-induced-polydipsia) | Electrophysiological markers of compulsive behavior: OFC and striatal LFPs and single units in schedule-induced polydipsia (rats) |
+| [calcium_rats_gonogo](https://github.com/Willuhn-Group/calcium_rats_gonogo) | Prelimbic and infralimbic calcium activity during a Go/No-Go task in rats |
 
 ---
 
@@ -52,6 +53,9 @@ cite the release you used (see each repository's *Releases* page and
 
 ## Contributing
 
-Lab members and collaborators are welcome to contribute. Start with
-[CONTRIBUTING.md](https://github.com/Willuhn-Group/.github/blob/main/CONTRIBUTING.md)
-and the [lab code conventions](https://github.com/Willuhn-Group/.github/blob/main/LAB_CONVENTIONS.md).
+Lab members and collaborators are welcome to contribute.
+
+- New here? [Getting started](https://github.com/Willuhn-Group/.github/blob/main/ONBOARDING.md)
+- [How to contribute](https://github.com/Willuhn-Group/.github/blob/main/CONTRIBUTING.md)
+- [Lab code conventions](https://github.com/Willuhn-Group/.github/blob/main/LAB_CONVENTIONS.md)
+- [Guide for repository leaders](https://github.com/Willuhn-Group/.github/blob/main/LEADER_GUIDE.md)

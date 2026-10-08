@@ -4,8 +4,12 @@ Thanks for contributing! This guide covers how to get a change into a lab
 repository. The coding rules themselves (naming, headers, paths) are in
 [LAB_CONVENTIONS.md](LAB_CONVENTIONS.md).
 
-New to GitHub? That's fine. Open a draft pull request early and ask; nobody
-expects perfection on the first try.
+New to GitHub? Start with [ONBOARDING.md](ONBOARDING.md) (30 minutes, including
+a practice pull request). If you get stuck, ask the repo's leader; nobody
+expects perfection on the first try. Leading a repo? See [LEADER_GUIDE.md](LEADER_GUIDE.md).
+
+**Every repository has a leader** (named in its README and `CLAUDE.md`). The
+leader looks after `main` and checks every change before it is merged.
 
 ---
 
@@ -13,10 +17,13 @@ expects perfection on the first try.
 
 1. **Branch** from `main`, one branch per task.
 2. **Commit** your progress to that branch as often as you like.
-3. **Open a draft pull request** early to get feedback.
-4. **Mark it ready** when it works; a lab member reviews it.
+3. When the work is **close to a finished, usable version**, open a **pull request**.
+4. The **repo leader** reviews it.
 5. **Squash and merge** into `main`. Delete the branch.
 6. A **release** (a version tag) is made separately, when it's needed.
+
+The leader is the only person who can push to `main` directly. Everyone else,
+however small the change, goes through a pull request.
 
 ---
 
@@ -45,8 +52,9 @@ git checkout add-lick-microstructure
 git pull origin main
 ```
 
-**Access:** lab members get write access and branch inside the lab repo.
-External collaborators fork the repo and open the pull request from their fork.
+**Access:** all lab members can see every lab repository. People working on a
+repo get write access and branch inside it. External collaborators fork the
+repo (public repos only) and open the pull request from their fork.
 
 ## 2. Commit
 
@@ -59,24 +67,29 @@ Never commit raw data, `localPaths.m`, or files with your own drive paths.
 
 ## 3. Open a pull request (PR)
 
-Push your branch and open a PR into `main` on GitHub:
+Push your branch whenever you like (it backs up your work):
 
 ```
 git push -u origin add-lick-microstructure
 ```
 
-- **Open it as a Draft** as soon as you'd like feedback ("Am I on the right track?").
+**Open the PR only when the work is close to a finished, usable version**: it
+runs, it is documented, and you have gone through the checklist below yourself.
+The leader reviews finished work, not work in progress.
+
 - Fill in the PR template: what it does, how to test it, and the checklist.
 - Small PRs get reviewed fast. If a PR touches many unrelated things, split it.
+- Need input before you're done? Ask the leader directly. If it's easier to show
+  the code, open a **Draft** PR with a specific question in its description; the
+  leader is not expected to review drafts in full.
 
 ## 4. Review
 
-When the work is ready, click **Ready for review** and ask a lab member
-(anyone, not only the coordinator) to review.
+The **repo leader** reviews every PR into `main`.
 
 A review checks that the code is **safe to share**, not every line of the science.
 
-### Reviewer checklist
+### Review checklist (authors: check it yourself before opening the PR)
 
 - [ ] The example in `example_use/` runs from a **fresh clone** (only this repo and its listed dependencies on the MATLAB path).
 - [ ] Every new or changed function has the **standard header** (inputs, outputs, example, version).
@@ -89,7 +102,8 @@ Comment on what needs changing; the author pushes fixes to the same branch and
 the PR updates automatically.
 
 **Breaking changes** (anything that would make someone's existing script fail
-or give different results) need the coordinator's OK before merging.
+or give different results) must be flagged in the PR; the leader decides whether
+and when they go in.
 
 ## 5. Merge
 
