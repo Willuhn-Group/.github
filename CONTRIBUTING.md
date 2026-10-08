@@ -177,4 +177,4 @@ the README table is what keeps the published record complete.
 ---
 
 Questions, or something here doesn't make sense? Open an issue in the
-`.github` repo or ask in [Slack channel].
+`.github` repo or ask in the `#code_repository` Slack channel.

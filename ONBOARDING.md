@@ -4,7 +4,7 @@ Welcome! This takes about **30 minutes** and gets you set up to use and
 contribute to the [Willuhn Group](https://github.com/Willuhn-Group) code.
 No programming experience with Git is needed.
 
-Questions at any point: ask Sergio or post in [Slack channel].
+Questions at any point: ask Sergio or post in the `#code_repository` Slack channel.
 
 ---
 
