@@ -1,6 +1,6 @@
 # Willuhn Group — Code Conventions
 
-*Version 0.2 · October 2026 · updated after the lab meeting of 7 Oct 2026*
+*Version 0.3 · October 2026*
 
 This document defines how code is organized, written and shared across the
 [Willuhn-Group GitHub](https://github.com/Willuhn-Group). It lives in the
@@ -15,15 +15,20 @@ Anything here is open to change: propose edits through a pull request to `.githu
 
 | Type | Purpose | Examples | Visibility | Who contributes |
 |---|---|---|---|---|
-| **General** | Reusable tools anyone in the lab can use | `medpc-behavior`, `matlab-utilities` | **Public** | Everyone (via PR to the leader) |
-| **Project** | Analysis pipeline for one study/paper; becomes the citable code of the publication | `ephys-induced-polydipsia`, `calcium_rats_gonogo` | **Private** (lab members only) until publication | Project members |
+| **General** | Reusable tools anyone in the lab can use | `behavior_medpc`, `utilities_matlab` | **Public** | Everyone (via PR to the leader) |
+| **Project** | Analysis pipeline for one study/paper; becomes the citable code of the publication | `analysis_ephys_SIP`, `calcium_rats_gonogo` | **Private** (lab members only) until the paper is submitted; **public** from submission on (under review and after publication) | Project members |
 | **Hub** (`.github`) | Lab-wide conventions, contributing guide, org landing page | `.github` | Public (required by GitHub) | Everyone (via PR) |
 
 **Every repository has one leader**, named in its `CLAUDE.md` and README. The
 leader is responsible for `main`: they check every change before it is merged.
 
-**Naming:** lowercase, words separated by hyphens (`lfp-tools`, `sip-ephys`).
-General repos are named after what they do; project repos after the study.
+**Naming:** lowercase, words separated by underscores. Established acronyms
+may stay uppercase (`SIP`, `FSCV`, `LFP`).
+- General repos: `<family>_<what>`, with the family first so related repos
+  sort together in the repository list (`behavior_medpc`, `utilities_matlab`).
+- Project repos: after the study (`calcium_rats_gonogo`, `analysis_ephys_SIP`).
+- Branch names are different: they use hyphens (`fix-read-medpc-name`), see
+  [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ### Access and teams
 
@@ -32,8 +37,8 @@ General repos are named after what they do; project repos after the study.
 | Who | Access | How it is set |
 |---|---|---|
 | All lab members | **Read** on every repo, private ones included | Org base permission |
-| A project's members | **Write** on that project's repo | One GitHub team per project (e.g. `team-polydipsia`) |
-| All lab members, on general repos | **Write**, so anyone can branch and open a PR | Team `lab-all` |
+| A project's members | **Write** on that project's repo | One GitHub team per project (e.g. `team_sip`) |
+| All lab members, on general repos | **Write**, so anyone can branch and open a PR | Team `lab_all` |
 | The repo leader | **Admin** on their repo | Automatic for whoever creates the repo |
 | Org owners (2–3 people, e.g. the PI and the code coordinator) | Everything, including making a repo public | Org settings |
 
@@ -63,7 +68,7 @@ Steps:
 - Base permissions: **Read**
 - Repository creation: **allowed for members**
 - Changing repository visibility: **owners only**, so going public at
-  publication is a deliberate step and no project is made public by accident
+  submission is a deliberate step and no project is made public by accident
 
 > On GitHub's free plan, branch rules are not enforced on private repos: anyone
 > with Write can technically push to `main`. "PRs for everyone but the leader"
@@ -72,13 +77,13 @@ Steps:
 ## 2. Dependencies between repos
 
 - **General repos never depend on project repos.**
-- General repos may depend on other general repos (e.g. `medpc-behavior` → `matlab-utilities`).
+- General repos may depend on other general repos (e.g. `behavior_medpc` → `utilities_matlab`).
 - **Project repos pin exact versions** of the general repos they use. The README
   has a *Requirements* table:
 
   | Dependency | Version | Link |
   |---|---|---|
-  | medpc-behavior | v0.3.0 | https://github.com/Willuhn-Group/medpc-behavior/releases/tag/v0.3.0 |
+  | behavior_medpc | v0.3.0 | https://github.com/Willuhn-Group/behavior_medpc/releases/tag/v0.3.0 |
 
 - If a project needs a fix or new feature in a general function, **fix it in the
   general repo** (PR), release a new version, and update the pin. Do not copy and
@@ -157,7 +162,7 @@ function out = functionName(cfg)
 %   cfg = []; cfg.fieldA = 'x';
 %   out = functionName(cfg);
 %
-% Dependencies: readMedpc (medpc-behavior)
+% Dependencies: readMedpc (behavior_medpc)
 %
 % Version history:
 %   v0.1  Aug 2024  First version
@@ -201,9 +206,10 @@ Step by step in [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## 7. Releases and citation (project repos)
 
-1. At publication (or at submission, if the journal requires code access; agree
-   with the PI): make the repo **public**, tag a release (`v1.0.0`) and archive
-   it on [Zenodo](https://zenodo.org) (GitHub integration) to get a DOI.
+1. When the paper is submitted: make the repo **public**, tag a release
+   (`v1.0.0`) and archive it on [Zenodo](https://zenodo.org) (GitHub
+   integration) to get a DOI. A project repo is public only while its paper is
+   under review or after it is published; before submission it stays private.
 2. Add `CITATION.cff` with authors, title and DOI.
 3. The tagged release is frozen. Changes requested in revision get a new tag
    (`v1.1.0`) and a new DOI version; the paper cites the final one.

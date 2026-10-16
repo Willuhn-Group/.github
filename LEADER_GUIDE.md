@@ -30,7 +30,7 @@ in [LAB_CONVENTIONS.md](LAB_CONVENTIONS.md). In short:
 
 ## 2. Managing your team
 
-- **Create the team:** org → **Teams → New team**, named `team-<project>`.
+- **Create the team:** org → **Teams → New team**, named `team_<project>`.
   Add the project members.
 - **Give the team access:** repo → **Settings → Collaborators and teams →
   Add teams** → choose the team → role **Write**.
@@ -106,10 +106,10 @@ built up, or **immediately** after fixing a bug that affected results.
 Choosing the number and publishing a release are described in
 [CONTRIBUTING.md, section 6](CONTRIBUTING.md#6-releases-versions).
 
-## 6. Going public at publication (project repos)
+## 6. Going public at submission (project repos)
 
-When the paper is accepted (or at submission, if the journal requires code
-access; agree with the PI):
+A project repo stays private until its paper is submitted. When the paper is
+submitted:
 
 1. **Clean up:** README complete (pipeline, requirements with exact versions,
    how to run), no absolute paths, no data, `CLAUDE.md` up to date.
@@ -119,6 +119,8 @@ access; agree with the PI):
    switch the repo on), then publish a release `v1.0.0`. Zenodo archives it and
    gives you a **DOI**.
 5. Add the DOI to the README, `CITATION.cff` and the paper.
+   Revisions get a new release (`v1.1.0`) and a new DOI version; the final
+   paper cites the last one.
 6. Add the repo to the *Project repositories* table on the lab's GitHub landing page.
 
 ## 7. Keeping things up to date

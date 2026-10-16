@@ -29,14 +29,14 @@ Reusable code that anyone can use for their own data.
 
 | Repository | What it does | Language |
 |---|---|---|
-| [medpc-behavior](https://github.com/Willuhn-Group/medpc-behavior) | Read MedPC (Med Associates) files; trials, events, latencies, bouts | MATLAB |
-| [matlab-utilities](https://github.com/Willuhn-Group/matlab-utilities) | General MATLAB helpers: project file listing and plotting utilities | MATLAB |
+| [behavior_medpc](https://github.com/Willuhn-Group/behavior_medpc) | Read MedPC (Med Associates) files; trials, events, latencies, bouts | MATLAB |
+| [utilities_matlab](https://github.com/Willuhn-Group/utilities_matlab) | General MATLAB helpers: project file listing and plotting utilities | MATLAB |
 | *more coming soon* | | |
 
 ### Project repositories
 The analysis code behind specific studies. Project repositories are private
 while the work is ongoing and are made public, with a DOI, when the study is
-published.
+submitted for publication.
 
 | Repository | Study |
 |---|---|

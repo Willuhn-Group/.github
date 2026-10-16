@@ -22,7 +22,7 @@ the brain regions and the recording/manipulation technique.>
 | Dependency | Version | Used for |
 |---|---|---|
 | MATLAB | <R20XXx> | |
-| <general lab repo, e.g. medpc-behavior> | <vX.Y.Z> | <use> |
+| <general lab repo, e.g. behavior_medpc> | <vX.Y.Z> | <use> |
 | <external toolbox, e.g. FieldTrip> | <version> | <use> |
 
 ## Data
@@ -32,7 +32,7 @@ and are available from the authors on reasonable request.
 
 ## Citation
 
-*(Added at publication: paper reference and the DOI of the code release.)*
+*(Added at submission: paper reference (or preprint) and the DOI of the code release.)*
 
 ## License
 
