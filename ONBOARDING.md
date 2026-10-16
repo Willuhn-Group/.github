@@ -30,6 +30,12 @@ Questions at any point: ask Sergio or post in the `#code_repository` Slack chann
    banner at the top.
 6. Check that you can see the lab repositories, including the private ones.
 
+> **Optional, for your own profile:** make your lab membership public
+> ([org People page](https://github.com/orgs/Willuhn-Group/people) → your name →
+> *Public*) so the lab shows on your profile, and turn on **Private
+> contributions** (your profile → *Contribution settings*) so work in private
+> lab repos counts in your activity graph.
+
 ## Part 3: Install GitHub Desktop (5 min)
 
 7. Download **[GitHub Desktop](https://desktop.github.com)** and install it.
@@ -41,10 +47,10 @@ Questions at any point: ask Sergio or post in the `#code_repository` Slack chann
 
 ## Part 4: Practice: your first pull request (15 min)
 
-The `github-practice` repo is a sandbox: nothing there matters, so try things freely.
+The `github_practice` repo is a sandbox: nothing there matters, so try things freely.
 
 10. **Clone it:** GitHub Desktop → **File → Clone repository** →
-    `Willuhn-Group/github-practice` → choose a folder on your computer → **Clone**.
+    `Willuhn-Group/github_practice` → choose a folder on your computer → **Clone**.
 11. **Create a branch:** **Current branch → New branch**, name it
     `add-<yourname>` → **Create branch**.
 12. **Make a change:** open `members.md` in any text editor (or MATLAB) and add
@@ -70,7 +76,7 @@ pull request → review → merge.**
 **The three rules that matter most:**
 1. **Never commit data**, only code (and small example files).
 2. **No absolute paths** (`M:\...`, `\\vs03\...`); use `fullfile`.
-3. **Nothing goes to `main` without a pull request** (except by the repo leader).
+3. **Nothing goes to `main` without a pull request**, not even from the repo leader.
 
 ---
 

@@ -25,13 +25,28 @@ voltammetry, calcium imaging with miniaturized microscopes, optogenetics and
 deep-brain stimulation.
 
 ### General tools
-Reusable code that anyone can use for their own data.
+Reusable code that anyone can use for their own data, grouped by family.
+Browse by topic: [behavior](https://github.com/search?q=org%3AWilluhn-Group+topic%3Abehavior&type=repositories) ·
+[preprocessing](https://github.com/search?q=org%3AWilluhn-Group+topic%3Apreprocessing&type=repositories) ·
+[utilities](https://github.com/search?q=org%3AWilluhn-Group+topic%3Autilities&type=repositories)
+
+**Behavior**
 
 | Repository | What it does | Language |
 |---|---|---|
 | [behavior_medpc](https://github.com/Willuhn-Group/behavior_medpc) | Read MedPC (Med Associates) files; trials, events, latencies, bouts | MATLAB |
+
+**Signal pre-processing**
+
+| Repository | What it does | Language |
+|---|---|---|
+| *coming soon: ephys, FSCV, photometry* | | |
+
+**Utilities**
+
+| Repository | What it does | Language |
+|---|---|---|
 | [utilities_matlab](https://github.com/Willuhn-Group/utilities_matlab) | General MATLAB helpers: project file listing and plotting utilities | MATLAB |
-| *more coming soon* | | |
 
 ### Project repositories
 The analysis code behind specific studies. Project repositories are private
