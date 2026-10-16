@@ -49,6 +49,13 @@ Questions at any point: ask Sergio or post in the `#code_repository` Slack chann
 
 The `github_practice` repo is a sandbox: nothing there matters, so try things freely.
 
+> **Before you start:** this part only works once you have accepted the
+> invitation to Willuhn-Group and Sergio has added you to the lab team. Until
+> then you can't publish your branch.
+>
+> `github_practice` is a **public** repo: only write things you are happy for
+> anyone to see.
+
 10. **Clone it:** GitHub Desktop → **File → Clone repository** →
     `Willuhn-Group/github_practice` → choose a folder on your computer → **Clone**.
 11. **Create a branch:** **Current branch → New branch**, name it
