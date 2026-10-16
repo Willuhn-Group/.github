@@ -29,8 +29,8 @@ Reusable code that anyone can use for their own data.
 
 | Repository | What it does | Language |
 |---|---|---|
-| [medpc-behavior](https://github.com/Willuhn-Group/medpc-behavior) | Read MedPC (Med Associates) files; trials, events, latencies, bouts | MATLAB |
-| [matlab-utilities](https://github.com/Willuhn-Group/matlab-utilities) | General MATLAB helpers: project file listing and plotting utilities | MATLAB |
+| [behavior_matlab](https://github.com/Willuhn-Group/behavior_matlab) | Read MedPC (Med Associates) files; trials, events, latencies, bouts | MATLAB |
+| [utilities_matlab](https://github.com/Willuhn-Group/utilities_matlab) | General MATLAB helpers: project file listing and plotting utilities | MATLAB |
 | *more coming soon* | | |
 
 ### Project repositories
