@@ -29,7 +29,7 @@ Reusable code that anyone can use for their own data.
 
 | Repository | What it does | Language |
 |---|---|---|
-| [behavior_matlab](https://github.com/Willuhn-Group/behavior_matlab) | Read MedPC (Med Associates) files; trials, events, latencies, bouts | MATLAB |
+| [behavior_medpc](https://github.com/Willuhn-Group/behavior_medpc) | Read MedPC (Med Associates) files; trials, events, latencies, bouts | MATLAB |
 | [utilities_matlab](https://github.com/Willuhn-Group/utilities_matlab) | General MATLAB helpers: project file listing and plotting utilities | MATLAB |
 | *more coming soon* | | |
 
