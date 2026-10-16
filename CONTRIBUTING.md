@@ -22,8 +22,9 @@ leader looks after `main` and checks every change before it is merged.
 5. **Squash and merge** into `main`. Delete the branch.
 6. A **release** (a version tag) is made separately, when it's needed.
 
-The leader is the only person who can push to `main` directly. Everyone else,
-however small the change, goes through a pull request.
+Nobody pushes to `main` directly, the leader included: every change, however
+small, goes through a pull request. `main` is protected so that GitHub blocks
+direct pushes (see *Protecting `main`* in [LAB_CONVENTIONS.md](LAB_CONVENTIONS.md)).
 
 ---
 
@@ -43,8 +44,10 @@ git pull
 git checkout -b add-lick-microstructure
 ```
 
-A branch should live days or weeks, not months. Long-lived branches drift away
-from `main` and become painful to merge. If your work takes longer, pull `main`
+A branch should live days or weeks, not months. `main` is the only permanent
+branch: there is no `developer` or `dev` branch, and no personal branch you keep
+working on forever. Long-lived branches drift away from `main` and become
+painful to merge. If your work takes longer, pull `main`
 into your branch regularly:
 
 ```
@@ -80,8 +83,8 @@ The leader reviews finished work, not work in progress.
 - Fill in the PR template: what it does, how to test it, and the checklist.
 - Small PRs get reviewed fast. If a PR touches many unrelated things, split it.
 - Need input before you're done? Ask the leader directly. If it's easier to show
-  the code, open a **Draft** PR with a specific question in its description; the
-  leader is not expected to review drafts in full.
+  the code, push your branch and send them its link on GitHub, with a specific
+  question.
 
 ## 4. Review
 
@@ -151,24 +154,30 @@ Not after every merge. Release when:
 
 General repos publish versions; **project repos record which version they use.**
 
+During development, if your project needs a fix that is merged but not yet
+released (or still waiting in a PR), you may point the submodule to that exact
+commit (`git checkout <commit>` instead of a tag) and write the commit in the
+README table. Switch to a release tag as soon as one exists, and **always before
+the paper is submitted**.
+
 **In the README** (always), a *Requirements* table:
 
 | Dependency | Version | Link |
 |---|---|---|
-| medpc-behavior | v0.2.0 | https://github.com/Willuhn-Group/medpc-behavior/releases/tag/v0.2.0 |
+| behavior_medpc | v0.2.0 | https://github.com/Willuhn-Group/behavior_medpc/releases/tag/v0.2.0 |
 
 **As a git submodule** (recommended), so the exact version comes with the clone:
 
 ```
-git submodule add https://github.com/Willuhn-Group/medpc-behavior external/medpc-behavior
-cd external/medpc-behavior
+git submodule add https://github.com/Willuhn-Group/behavior_medpc external/behavior_medpc
+cd external/behavior_medpc
 git checkout v0.2.0
 cd ../..
-git commit -am "Pin medpc-behavior v0.2.0"
+git commit -am "Pin behavior_medpc v0.2.0"
 ```
 
 - Clone a project with its dependencies: `git clone --recurse-submodules <url>`
-- Upgrade later: `cd external/medpc-behavior`, `git fetch --tags`, `git checkout v0.3.0`, then commit in the project repo.
+- Upgrade later: `cd external/behavior_medpc`, `git fetch --tags`, `git checkout v0.3.0`, then commit in the project repo.
 - GitHub Desktop handles submodules too.
 
 Release zips (and Zenodo archives) do **not** include submodule contents, so
