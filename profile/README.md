@@ -9,6 +9,8 @@ impulsivity. Our work focuses on how the basal ganglia interact with the
 cortex, and on how dopamine and serotonin shape these circuits, with a
 translational link to obsessive-compulsive disorder and deep-brain stimulation.
 
+🔗 [Group Leader - Ingo Willuhn](https://nin.nl/author/willuhnherseninstituut-knaw-nl/).
+
 🔗 [Lab website](https://nin.nl/research-groups/willuhn/)
 
 ---
@@ -79,9 +81,8 @@ Lab members and collaborators are welcome to contribute.
 
 ## Coordinated by
 
-**Sergio Conde-Ocazionez** ([@sergio-conde](https://github.com/sergio-conde)),
-who leads the lab's shared code initiative.
-
-- ✉️ s.conde@nin.knaw.nl
+**Sergio Conde-Ocazionez** ([@sergio-conde](https://github.com/sergio-conde)).
+- s.conde@nin.knaw.nl
+  
 - 💬 Slack: `#code_repository`
 - 🔗 [Lab website](https://nin.nl/research-groups/willuhn/)
