@@ -1,6 +1,6 @@
 # Willuhn Group — Code Conventions
 
-*Version 0.3 · October 2026*
+*Version 0.4 · October 2026*
 
 This document defines how code is organized, written and shared across the
 [Willuhn-Group GitHub](https://github.com/Willuhn-Group). It lives in the
@@ -183,26 +183,19 @@ Owners can still create public repos (general repos) and change visibility.
 
 ## 3. Folder layout
 
-**General repo**
-```
-matlab/          % functions (subfolders by topic if needed)
-python/          % only once Python versions exist
-example_use/     % one runnable example script per main function family
-example_data/    % small example files (a few MB max)
-README.md  LICENSE  CLAUDE.md  .gitignore
-```
+**Each repo's leader defines its layout.** Code is organized differently for
+different data and techniques, so there is no single required tree. Whatever
+the layout, it must be documented: a short tree in the README
+(*Repository structure*) and in the repo's `CLAUDE.md` (*Layout*), with one
+line per folder.
 
-**Project repo**
-```
-matlab/
-  config/        % projConfig.m + localPaths.template.m
-  <stage>/       % one folder per pipeline stage (behavior/, lfp/, spikes/, …)
-  utils/         % project-specific helpers only
-example_use/
-example_data/
-docs/            % pipeline diagrams, notes
-README.md  LICENSE  CITATION.cff  CLAUDE.md  .gitignore
-```
+What holds in every repo, whatever its layout:
+- Example scripts and their small example data live in the repo, and the
+  examples run from a fresh clone (paths built relative to the repo, see
+  section 4).
+- No experimental data in git (section 5).
+- Project-specific settings and local paths stay out of the functions
+  (`projConfig.m` and the git-ignored `localPaths.m` in project repos).
 
 ## 4. MATLAB style
 
