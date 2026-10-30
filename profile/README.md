@@ -74,3 +74,14 @@ Lab members and collaborators are welcome to contribute.
 - [How to contribute](https://github.com/Willuhn-Group/.github/blob/main/CONTRIBUTING.md)
 - [Lab code conventions](https://github.com/Willuhn-Group/.github/blob/main/LAB_CONVENTIONS.md)
 - [Guide for repository leaders](https://github.com/Willuhn-Group/.github/blob/main/LEADER_GUIDE.md)
+
+---
+
+## Coordinated by
+
+**Sergio Conde-Ocazionez** ([@sergio-conde](https://github.com/sergio-conde)),
+who leads the lab's shared code initiative.
+
+- ✉️ s.conde@nin.knaw.nl
+- 💬 Slack: `#code_repository`
+- 🔗 [Lab website](https://nin.nl/research-groups/willuhn/)
