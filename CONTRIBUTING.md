@@ -1,8 +1,8 @@
 # Contributing to Willuhn Group code
 
 Thanks for contributing! This guide covers how to get a change into a lab
-repository. The coding rules themselves (naming, headers, paths) are in
-[LAB_CONVENTIONS.md](LAB_CONVENTIONS.md).
+repository. The code rules and recommendations (paths, function help, naming)
+are in [LAB_CONVENTIONS.md](LAB_CONVENTIONS.md).
 
 New to GitHub? Start with [ONBOARDING.md](ONBOARDING.md) (30 minutes, including
 a practice pull request). If you get stuck, ask the repo's leader; nobody
@@ -90,16 +90,17 @@ The leader reviews finished work, not work in progress.
 
 The **repo leader** reviews every PR into `main`.
 
-A review checks that the code is **safe to share**, not every line of the science.
+A review checks that the code is **safe to share**, not every line of the science
+or your personal coding style.
 
 ### Review checklist (authors: check it yourself before opening the PR)
 
-- [ ] The example in `example_use/` runs from a **fresh clone** (only this repo and its listed dependencies on the MATLAB path).
-- [ ] Every new or changed function has the **standard header** (inputs, outputs, example, version).
+- [ ] The example script (or the pipeline stage you changed) runs from a **fresh clone** (only this repo and its listed dependencies on the MATLAB path).
+- [ ] Every new or changed function has a **help block** (what it does, inputs, outputs).
 - [ ] **No absolute paths** (`M:\`, `\\vs03\`, `C:\Users\...`); paths built with `fullfile`.
 - [ ] **No breaking changes** to existing functions (inputs, output fields), or, if there are, they are on purpose and flagged in the PR.
-- [ ] Names follow the conventions, and renamed functions are updated **everywhere** they are called.
-- [ ] No data files besides small examples in `example_data/`.
+- [ ] Renamed functions are updated **everywhere** they are called.
+- [ ] No data files besides small, de-identified examples.
 
 Comment on what needs changing; the author pushes fixes to the same branch and
 the PR updates automatically.

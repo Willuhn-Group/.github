@@ -24,9 +24,9 @@
 - Project repos depend on this code: **do not change function signatures or output
   fields** without flagging it in the PR and a version bump that marks it as
   breaking (MINOR while the repo is at `0.x`, MAJOR from `v1.0.0` on).
-- Every public function has a runnable example in `example_use/` using only
-  `example_data/`.
-- Before finishing a change, run every script in `example_use/` from a clean MATLAB
+- Every public function has a runnable example in `<examples folder>` using only
+  `<example data folder>`.
+- Before finishing a change, run every script in `<examples folder>` from a clean MATLAB
   path (only this repo and its listed dependencies added).
 
 ## Known issues / in progress
