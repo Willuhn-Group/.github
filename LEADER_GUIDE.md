@@ -241,13 +241,8 @@ Rename early, before the repo has releases and other projects use it. Then:
    `git remote set-url origin https://github.com/Willuhn-Group/<new_name>.git`
    (GitHub Desktop: *Repository → Repository settings → Remote*). Renaming the
    local folder is optional; if you do, update the MATLAB path.
-3. Projects that use the repo as a submodule update it once, through a PR:
-   ```
-   git submodule set-url external/<old_name> https://github.com/Willuhn-Group/<new_name>
-   git mv external/<old_name> external/<new_name>     # optional
-   ```
-   and fix the `addpath` in `projConfig.m` if the folder changed. Other members
-   then run `git submodule sync` and `git submodule update --init`.
+3. Projects that use the repo update the link in their README *Requirements*
+   table through a PR, and fix the `addpath` in `projConfig.m` if the folder changed.
 4. Update the name and links in the README, `CLAUDE.md`, the org landing page
    and the `.github` docs.
 5. **Never create a new repo with the old name.** GitHub redirects the old name
