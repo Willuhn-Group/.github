@@ -153,36 +153,20 @@ Not after every merge. Release when:
 
 ## 7. Pinning versions in project repos
 
-General repos publish versions; **project repos record which version they use.**
-
-During development, if your project needs a fix that is merged but not yet
-released (or still waiting in a PR), you may point the submodule to that exact
-commit (`git checkout <commit>` instead of a tag) and write the commit in the
-README table. Switch to a release tag as soon as one exists, and **always before
-the paper is submitted**.
-
-**In the README** (always), a *Requirements* table:
+General repos publish versions; **project repos record which version they use**
+in a *Requirements* table in the README:
 
 | Dependency | Version | Link |
 |---|---|---|
 | behavior_medpc | v0.2.0 | https://github.com/Willuhn-Group/behavior_medpc/releases/tag/v0.2.0 |
 
-**As a git submodule** (recommended), so the exact version comes with the clone:
+To get that version, download it from the link, or check out the tag in your
+clone of the general repo.
 
-```
-git submodule add https://github.com/Willuhn-Group/behavior_medpc external/behavior_medpc
-cd external/behavior_medpc
-git checkout v0.2.0
-cd ../..
-git commit -am "Pin behavior_medpc v0.2.0"
-```
-
-- Clone a project with its dependencies: `git clone --recurse-submodules <url>`
-- Upgrade later: `cd external/behavior_medpc`, `git fetch --tags`, `git checkout v0.3.0`, then commit in the project repo.
-- GitHub Desktop handles submodules too.
-
-Release zips (and Zenodo archives) do **not** include submodule contents, so
-the README table is what keeps the published record complete.
+During development, if your project needs a fix that is merged but not yet
+released (or still waiting in a PR), you may use that exact commit and write the
+commit in the table. Switch to a release tag as soon as one exists, and **always
+before the paper is submitted**.
 
 ---
 
