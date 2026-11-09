@@ -14,12 +14,15 @@
 - [ ] Yes: <!-- which functions, inputs or output fields change, and why -->
 
 ## Checklist
-<!-- Documentation only: tick the last item and skip the rest. -->
-- [ ] The example in `example_use/` runs from a fresh clone
-- [ ] New or changed functions have the standard header
+
+**Code** (fill this in only if you changed code)
+- [ ] The example script (or the pipeline stage you changed) runs from a fresh clone
+- [ ] New or changed functions have a help block (what it does, inputs, outputs)
 - [ ] No absolute paths; paths built with `fullfile`
 - [ ] Renamed functions are updated everywhere they are called
-- [ ] No data files besides small examples in `example_data/`
+- [ ] No data files besides small, de-identified examples
+
+**Documentation** (fill this in only if you changed docs)
 - [ ] Links and names in the changed docs are correct (repo names, file names, section references)
 
 See [CONTRIBUTING.md](https://github.com/Willuhn-Group/.github/blob/main/CONTRIBUTING.md) for details.

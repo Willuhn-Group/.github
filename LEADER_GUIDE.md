@@ -100,7 +100,7 @@ paper relies on it. Almost everything is under the repo's **Settings**.
 - [ ] Visibility (*Settings → General*, at the bottom): general repo **Public**;
       project repo **Private**, or Public once the paper is submitted.
 - [ ] `LICENSE` (MIT), `README.md` and `CLAUDE.md` in the root; README and `CLAUDE.md` name the leader.
-- [ ] `.gitignore` covers at least `*.asv`, `localPaths.m` and `*.mat` outside `example_data/`.
+- [ ] `.gitignore` covers at least `*.asv`, `localPaths.m` and `*.mat` outside the example data folder.
 
 **Access** (*Settings → Collaborators and teams*)
 - [ ] The leader has **Admin** (org owners have it automatically).
@@ -129,7 +129,7 @@ paper relies on it. Almost everything is under the repo's **Settings**.
 
 **Runs from scratch**
 - [ ] A fresh clone, with only the listed dependencies on the path, runs the
-      `example_use/` script without edits.
+      example script without edits.
 
 ## 4. Reviewing pull requests
 
@@ -155,10 +155,10 @@ isn't left waiting.
 ### Review checklist
 
 - [ ] The PR description says what it does and how to test it.
-- [ ] The example in `example_use/` (or the changed stage) runs from a **fresh clone**.
-- [ ] New or changed functions have the **standard header**.
+- [ ] The example script (or the changed stage) runs from a **fresh clone**.
+- [ ] New or changed functions have a **help block** (what it does, inputs, outputs).
 - [ ] **No absolute paths**; paths built with `fullfile`.
-- [ ] **No data files** besides small examples in `example_data/`.
+- [ ] **No data files** besides small, de-identified examples.
 - [ ] Renamed functions are updated **everywhere** they are called.
 - [ ] **Breaking changes** are flagged, and you agree with them (see below).
 

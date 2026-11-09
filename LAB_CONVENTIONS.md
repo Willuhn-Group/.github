@@ -1,11 +1,15 @@
 # Willuhn Group — Code Conventions
 
-*Version 0.4 · October 2026*
+*Version 0.5 · November 2026*
 
-This document defines how code is organized, written and shared across the
+This document defines how code is organized and shared across the
 [Willuhn-Group GitHub](https://github.com/Willuhn-Group). It lives in the
 `.github` repository and applies to every repo in the organization. Each repo's
 `CLAUDE.md` imports it, so AI coding assistants follow the same rules as people.
+
+**How you write your code is up to you.** The rules here exist so that others can
+find, run and trust your code. They don't decide how you structure a function or
+how many inputs it takes; for that, section 4 only offers recommendations.
 
 Anything here is open to change: propose edits through a pull request to `.github`.
 
@@ -197,23 +201,15 @@ What holds in every repo, whatever its layout:
 - Project-specific settings and local paths stay out of the functions
   (`projConfig.m` and the git-ignored `localPaths.m` in project repos).
 
-## 4. MATLAB style
+## 4. MATLAB code
 
-### Naming
-- Functions, files and variables: **camelCase** (`getTrials`, `medFiles`).
-  The file name must match the function name exactly.
-- Constants: UPPER_CASE (`MEDSAMPLERATE`).
-- Loop indices: `i` + what is iterated (`ifile`, `itrial`, `irat`).
-- Older snake_case names (`read_medpc`, `avg_err_shade`) are renamed when the
-  function is next touched, and **every call site is updated in the same commit**.
+Only the three rules under *Required* are checked in review, because they decide
+whether someone else can run and use your code. Everything under *Recommended*
+is advice: use what helps, and a reviewer can suggest it but not block a PR over it.
 
-### Inputs
-- Functions with more than two parameters take a single **`cfg` struct**
-  (FieldTrip style). Required fields are checked at the top; optional fields get
-  defaults.
-- Fail early with clear messages: `error('getTrials:missingField', 'cfg.medFile is required')`.
+### Required
 
-### Paths (most common cause of "works on my machine")
+#### Paths (most common cause of "works on my machine")
 - **Never hard-code absolute paths** (`M:\...`, `\\vs03\...`) in committed code.
 - Build paths with `fullfile`, never with `'\'` or `'/'`, so code runs on Windows, Mac and Linux.
 - Example scripts find their data relative to themselves:
@@ -225,8 +221,29 @@ What holds in every repo, whatever its layout:
   `localPaths.template.m`; each user copies it and fills in their own paths.
   `projConfig.m` reads `localPaths.m`.
 
-### Function header
-Every function starts with this help block (shown by `help functionName`):
+#### Function help
+Every function starts with a help block (shown by `help functionName`) that says
+what it does and what its inputs and outputs are, and matches the current code.
+The format is up to you; a full template is under *Recommended*.
+
+#### Renaming
+If you rename a function, update **every call site in the same commit**.
+
+### Recommended
+
+#### Naming
+- Functions, files and variables: camelCase (`getTrials`, `medFiles`).
+  MATLAB calls a function by its file name, so keep the two identical.
+- Constants: UPPER_CASE (`MEDSAMPLERATE`).
+- Loop indices: `i` + what is iterated (`ifile`, `itrial`, `irat`).
+
+#### Inputs
+- Choose whatever inputs suit your function. For functions with many parameters,
+  a single `cfg` struct (FieldTrip style) is often easier to read and extend:
+  check required fields at the top and give optional fields defaults.
+- Fail early with clear messages: `error('getTrials:missingField', 'cfg.medFile is required')`.
+
+#### Function header template
 
 ```matlab
 function out = functionName(cfg)
@@ -256,17 +273,16 @@ function out = functionName(cfg)
 % Neuromodulation & Behavior Laboratory, Netherlands Institute for Neuroscience
 ```
 
-The usage line and all names in the header must match the current code.
-
-### Scripts vs functions
-- `clear; clc` is fine at the top of example scripts, never inside functions.
-- Example scripts use cell sections (`%%`) so they can be run step by step in a demo.
+#### Scripts vs functions
+- `clear; clc` is fine at the top of example scripts, but avoid it inside functions.
+- Cell sections (`%%`) let example scripts run step by step in a demo.
 
 ## 5. Data
 
 - **No raw or processed experimental data in git.** Data stay on the institutional server.
-- `example_data/` holds small, de-identified example files only.
-- `.gitignore` covers `*.asv`, `localPaths.m`, `*.mat` outside `example_data/`, and output folders.
+- Only small, de-identified example files are committed, in a folder the leader
+  chooses (`example_data/` is a good default).
+- `.gitignore` covers `*.asv`, `localPaths.m`, `*.mat` outside the example data folder, and output folders.
 
 ## 6. Git workflow
 
@@ -315,12 +331,21 @@ MIT by default. Talk to the PI before choosing anything else.
 
 ## 10. Python (planned)
 
-Python versions of MATLAB tools will live in `python/` in the same repo,
-following PEP 8 (snake_case), which is the normal style for each language.
-Function names map one to one: `getTrials` ↔ `get_trials`.
+Python versions of MATLAB tools will live in `python/` in the same repo.
+We recommend PEP 8 (snake_case), the normal style for Python, with function names
+that map one to one: `getTrials` ↔ `get_trials`.
 
 ## 11. AI coding assistants
 
+Using an AI assistant is **not mandatory**, and you can use whichever assistant
+you prefer. The `CLAUDE.md` in each repo is just an example of how an assistant
+can help your work.
+
 - Every repo has a `CLAUDE.md` that imports this file and adds repo-specific context.
+
+If you do use an assistant:
+
+- Assistants treat section 4's *Recommended* items as defaults, and follow the
+  person's request and the style of the surrounding code first.
 - AI-generated code goes through the same PR and review as any other code.
 - The person who opens the PR is responsible for the code, whoever (or whatever) wrote it.
